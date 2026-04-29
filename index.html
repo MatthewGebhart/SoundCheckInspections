@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundCheck Home Inspections | Seattle & Puget Sound Area</title>
+  <meta name="description" content="Professional home inspections for the greater Seattle and Puget Sound area. Licensed, thorough, and trusted. Call or text for a same-day quote." />
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "SoundCheck Home Inspections",
+    "description": "Professional home inspections for the greater Seattle and Puget Sound area.",
+    "url": "https://www.soundcheckinspections.com",
+    "telephone": "+1-253-973-1841",
+    "areaServed": ["Seattle", "Bellevue", "Everett", "Kirkland", "Redmond", "Snohomish County", "King County"],
+    "serviceType": "Home Inspection"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #033b71;
+      --navy2:  #0a5099;
+      --teal:   #2a7d6f;
+      --teal-l: #3a9e8e;
+      --green:   #5aa522;
+      --green-l: #6fc429;
+      --cream:  #f7f4ef;
+      --cream2: #ede9e1;
+      --white:  #ffffff;
+      --text:   #1c1c1c;
+      --muted:  #5a6270;
+      --border: rgba(3,59,113,0.12);
+      --ff-head: 'DM Serif Display', Georgia, serif;
+      --ff-body: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── UTILITY ── */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-family: var(--ff-body);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: var(--green-l);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .btn-dark:hover {
+      background: var(--navy2);
+      transform: translateY(-1px);
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background: var(--navy);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-mark {
+      font-family: var(--ff-head);
+      font-size: 20px;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    .nav-logo-sub {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.8);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green) !important;
+      border: 1px solid rgba(200,168,75,0.45);
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      transition: all 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--green) !important;
+      color: var(--navy) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(42,125,111,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(200,168,75,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--green);
+      opacity: 0.6;
+    }
+    .hero-h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--green);
+    }
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+    .hero-phone {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-phone-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2px;
+    }
+    .hero-phone-num {
+      font-family: var(--ff-head);
+      font-size: 26px;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 20px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.7s forwards;
+    }
+    .hero-badge {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-badge-val {
+      font-family: var(--ff-head);
+      font-size: 28px;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-badge-lbl {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+    .hero-badge-div {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+    }
+    .hero-img-col {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 42%;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.6s forwards;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--navy) 0%, rgba(15,34,54,0.4) 40%, rgba(15,34,54,0.2) 100%);
+      z-index: 1;
+    }
+    .hero-house-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* house illustration placeholder */
+    .house-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1a3550 0%, #0f2236 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .trust-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .trust-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--cream); }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .section-h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 56px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 36px 32px;
+      transition: background 0.2s;
+      position: relative;
+    }
+    .service-card:hover { background: #fafaf8; }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 32px; right: 32px;
+      height: 1px;
+      background: var(--border);
+    }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(42,125,111,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--teal);
+    }
+    .service-title {
+      font-family: var(--ff-head);
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .service-price {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 48px;
+      margin-top: 56px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--border);
+    }
+    .step {
+      position: relative;
+      text-align: center;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--ff-head);
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-title {
+      font-family: var(--ff-head);
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── COVERAGE ── */
+    .coverage-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .coverage-areas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .coverage-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text);
+      padding: 10px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .coverage-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+    .coverage-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--navy);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(42,125,111,0.2) 0%, transparent 70%);
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .cta-text h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(28px, 3.5vw, 42px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .cta-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+    }
+    .cta-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+    .cta-phone-num {
+      font-family: var(--ff-head);
+      font-size: 38px;
+      color: var(--white);
+      white-space: nowrap;
+    }
+    .cta-phone-num a { color: inherit; }
+    .cta-phone-num a:hover { color: var(--green); transition: color 0.2s; }
+    .cta-availability {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
+      text-align: right;
+    }
+
+    /* ── WHY ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .why-card {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .why-card:hover {
+      box-shadow: 0 8px 32px rgba(15,34,54,0.08);
+      transform: translateY(-2px);
+    }
+    .why-num {
+      font-family: var(--ff-head);
+      font-size: 40px;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .why-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .why-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand-name {
+      font-family: var(--ff-head);
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .footer-brand-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 280px;
+      margin-bottom: 20px;
+    }
+    .footer-phone {
+      font-family: var(--ff-head);
+      font-size: 22px;
+      color: var(--green);
+    }
+    .footer-col-title {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 28px;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-lic {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-lic span { color: rgba(255,255,255,0.5); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-img-col { display: none; }
+      .coverage-layout { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .cta-inner { flex-direction: column; }
+      .cta-contact { align-items: flex-start; }
+      .steps::before { display: none; }
+      .hero-badges { gap: 24px; }
+      .inspector-bio { grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#"> <img src="assets/logo-white.png" alt="SoundCheck Home Inspections" height="60" style="display:block;"> </a>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">Process</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#why-us">About</a></li>
+          <li><a href="tel:+12539731841" class="nav-cta">Call (253) 973-1841</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Seattle &amp; Puget Sound Area</p>
+        <h1 class="hero-h1">Your home should<br>pass <em>every</em> check.</h1>
+        <p class="hero-sub">
+          Professional, thorough home inspections from a licensed inspector
+          who knows the Pacific Northwest — its weather, its soils, and its homes.
+        </p>
+        <div class="hero-actions">
+          <div class="hero-phone">
+            <span class="hero-phone-label">Call or text anytime</span>
+            <a href="tel:+12539731841" class="hero-phone-num">(253) 973-1841</a>
+          </div>
+          <a href="#quote" class="btn btn-primary">
+            <svg width="15" height="15" ...>...</svg>
+            Get a Same-Day Quote
+          </a>
+          <a href="#services" class="btn btn-outline">See Services</a>
+        </div>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-val">24hr</span>
+            <span class="hero-badge-lbl">Report delivery</span>
+          </div>
+          <div class="hero-badge-div"></div>
+          <div class="hero-badge">
+            <span class="hero-badge-val">200+</span>
+            <span class="hero-badge-lbl">Items inspected</span>
+          </div>
+          <!-- <div class="hero-badge-div"></div>
+          <div class="hero-badge">
+            <span class="hero-badge-val">5★</span>
+            <span class="hero-badge-lbl">Client rated</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- decorative right column — replace with a real photo -->
+    <div class="hero-img-col">
+      <div class="hero-img-overlay"></div>
+        <img src="assets/hero-house.jpg"
+       alt="Pacific Northwest home exterior"
+       style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          WA State Licensed Inspector
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Reports within 24 hours
+        </div>
+        <div class="trust-divider"></div>
+        <!-- <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          InterNACHI Certified
+        </div> -->
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          King &amp; Snohomish Counties
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Same-week availability
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">What we inspect</p>
+        <h2 class="section-h2">Comprehensive inspection<br>services for every property</h2>
+        <p class="section-lead">From condos to craftsmans, new construction to century-old Victorians — every inspection is thorough, documented, and delivered fast.</p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="service-title">Standard Home Inspection</h3>
+          <p class="service-desc">Full evaluation of structure, roof, electrical, plumbing, HVAC, insulation, and more. 200+ items checked. You're welcome to attend.</p>
+          <span class="service-price">From $425 — see full pricing →</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3 class="service-title">Condo &amp; Townhome</h3>
+          <p class="service-desc">Interior systems, unit-specific components, and any accessible common areas. Flat-rate pricing, no surprises.</p>
+          <span class="service-price">From $375</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="service-title">Pre-Listing Inspection</h3>
+          <p class="service-desc">Sellers: know your home before buyers do. Identify and address issues before they derail your sale or negotiation.</p>
+          <span class="service-price">Same rates as buyer inspections</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3 class="service-title">Warranty Inspection (11-Month)</h3>
+          <p class="service-desc">New construction isn't perfect construction. Before your builder's one-year warranty expires, a thorough walkthrough can surface settling cracks, grading issues, improper flashing, HVAC deficiencies, and items missed during the punch list — giving you documentation and leverage to get them corrected at no cost to you.</p>
+          <span class="service-price">Same rates as standard inspections</span>
+        </div>
+        <!-- <div class="service-card"> -->
+          <!-- <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="service-title">Sewer Scope</h3>
+          <p class="service-desc">Camera inspection of the lateral sewer line — critical in the Pacific Northwest where older clay and cast-iron lines are common.</p>
+          <span class="service-price">$275 bundled · $325 standalone</span>
+        </div> -->
+        <!-- <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2v20"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3 class="service-title">Radon Testing</h3>
+          <p class="service-desc">Radon is present throughout the Puget Sound region. Continuous electronic monitor placed during inspection, results included in your report.</p>
+          <span class="service-price">$150–$175</span>
+        </div> -->
+        <!-- <div class="service-card">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          </div>
+          <h3 class="service-title">Mold &amp; Air Quality</h3>
+          <p class="service-desc">Air sampling and surface testing with lab analysis. Especially relevant in the PNW's wet climate. Results typically in 3–5 days.</p>
+          <span class="service-price">$250–$350</span>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">The process</p>
+        <h2 class="section-h2">Simple from call to report</h2>
+        <p class="section-lead">Most inspections are scheduled within 1–2 days and reports are delivered within 24 hours of the walkthrough.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3 class="step-title">Call or text</h3>
+          <p class="step-desc">Reach out with the property address and your target date. I'll confirm availability and quote within the hour.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3 class="step-title">On-site inspection</h3>
+          <p class="step-desc">2–4 hour walkthrough. You're welcome to attend and ask questions. I cover every accessible system and component.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3 class="step-title">Detailed report</h3>
+          <p class="step-desc">A clear, photo-documented report delivered to your inbox within 24 hours. Prioritized findings, easy to share with your agent.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3 class="step-title">Follow-up support</h3>
+          <p class="step-desc">Have questions after reading the report? Call or text. I'm available to walk you through any findings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE WIDGET ── -->
+<section class="section" id="quote">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Instant pricing</p>
+      <h2 class="section-h2">Get your quote in seconds</h2>
+      <p class="section-lead">Enter your property details below for an instant estimate. No obligation — or call/text us and we'll quote you on the spot.</p>
+    </div>
+    <div class="reveal" style="margin-top: 48px;">
+      <iframe
+        src="https://widgets.spectora.com/#/my-inspection-company-88a7b5fa22/quote"
+        style="border: 0; height: 800px; width: 100%; border-radius: 4px;"
+        title="SoundCheck Home Inspections — instant quote"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+  <!-- ── CTA BAND ── -->
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Ready to schedule<br>your inspection?</h2>
+          <p>Same-week availability throughout the Seattle &amp; Puget Sound area.</p>
+        </div>
+        <div class="cta-contact">
+          <p class="cta-phone-num"><a href="tel:+12539731841">(253) 973-1841</a></p>
+          <p class="cta-availability">Call or text · Mon–Sat 7am–7pm</p>
+          <a href="tel:+12539731841" class="btn btn-primary" style="margin-top:8px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.15 3.4 2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── COVERAGE ── -->
+  <section class="section" id="coverage">
+    <div class="container">
+      <div class="coverage-layout">
+        <div class="reveal">
+          <p class="section-label">Service area</p>
+          <h2 class="section-h2">Serving the greater<br>Puget Sound region</h2>
+          <p class="section-lead">Based in the Seattle area, covering King and Snohomish counties with no travel fee. Extended coverage available.</p>
+          <p class="coverage-note" style="margin-top:24px;">Travel fees may apply for locations in Pierce County, Skagit County, and outlying areas. Call for details.</p>
+          <!-- <a href="tel:+12539731841" class="btn btn-dark" style="margin-top:28px;">Check your area</a> -->
+        </div>
+        <div class="reveal">
+          <div class="coverage-areas">
+            <div class="coverage-area"><span class="coverage-dot"></span>Seattle</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Bellevue</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Everett</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Kirkland</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Redmond</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Shoreline</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Renton</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Bothell</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Woodinville</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Kenmore</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Lynnwood</div>
+            <div class="coverage-area"><span class="coverage-dot"></span>Marysville</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ── -->
+  <section class="section section-alt" id="why-us">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">Why SoundCheck</p>
+        <h2 class="section-h2">An inspection you can<br>actually rely on</h2>
+        <p class="section-lead" style="margin-bottom: 48px;">Pacific Northwest homes have unique characteristics — wet crawlspaces, older knob-and-tube wiring, expansive soils. You want an inspector who knows the region.</p>
+      </div>
+      <div class="reveal inspector-bio" style="display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center; margin-bottom:64px; padding-bottom:64px; border-bottom:1px solid var(--border);">
+        <!-- Headshot -->
+        <div style="position:relative;">
+          <img src="assets/headshot.jpg"
+               alt="Matt Gebhart, SoundCheck Home Inspections"
+               style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:4px; display:block;">
+          <!-- accent bar -->
+          <div style="position:absolute; bottom:0; left:0; right:0; height:4px;"></div>
+        </div>
+        <!-- Bio -->
+        <div>
+          <p class="section-label">Your inspector</p>
+          <h3 style="font-family:var(--ff-head); font-size:clamp(26px,3vw,36px); color:var(--navy); line-height:1.1; margin-bottom:8px;">Matt Gebhart</h3>
+          <p style="font-size:13px; font-weight:500; letter-spacing:0.06em; color:var(--muted); text-transform:uppercase; margin-bottom:20px;">Licensed Home Inspector · Seattle Area</p>
+          <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:20px;">
+            With a background in carpentry, custom furniture making, and residential remodeling, I bring a craftsman's eye to every inspection. I know how homes are built, where shortcuts get taken, and what good work actually looks like — and I'll show you exactly what I find, not just write it up in a report.
+          </p>
+          <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:28px;">
+            I spent years in photography and community work before becoming an inspector, and both shaped how I do this job. I communicate clearly, document everything with sharp photos, and take the time to make sure you actually understand what you're looking at — because a great inspection report is only useful if it helps you make a confident decision.
+          </p>
+          <!-- Credential badges -->
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:500; color:var(--navy); background:var(--cream); border:1px solid var(--border); padding:7px 14px; border-radius:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              WA Lic. # 26006051              
+            </span>
+            <!-- <span style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:500; color:var(--navy); background:var(--cream); border:1px solid var(--border); padding:7px 14px; border-radius:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              InterNACHI Certified
+            </span> -->
+            <span style="display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:500; color:var(--navy); background:var(--cream); border:1px solid var(--border); padding:7px 14px; border-radius:4px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Based in Edmonds, WA
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h3 class="why-title">Pacific Northwest expertise</h3>
+          <p class="why-desc">PNW homes face moisture, drainage, and seismic concerns that generic checklists miss. Every inspection is tailored to what matters here.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h3 class="why-title">You attend, you learn</h3>
+          <p class="why-desc">Walking through the home with your inspector is far more valuable than reading a report alone. Questions are always welcome — during or after.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h3 class="why-title">Clear, photo-rich reports</h3>
+          <p class="why-desc">No jargon, no filler. Findings are prioritized by severity with photos attached to every item. Easy for you, your agent, and your attorney to read.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h3 class="why-title">Transparent pricing</h3>
+          <p class="why-desc">Flat-rate fees published upfront. No surprise add-ons. The price quoted is the price paid — and you'll know it before we confirm the appointment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <img src="assets/logo-white.png" alt="SoundCheck Home Inspections" height="60" style="display:block; margin-bottom:10px; opacity:0.9;">
+          <p class="footer-brand-desc">Professional home inspections for buyers, sellers, and investors throughout the greater Seattle and Puget Sound area.</p>
+          <a href="tel:+12539731841" class="footer-phone">(253) 973-1841</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Services</p>
+          <ul class="footer-links">
+            <li><a href="#services">Home Inspection</a></li>
+            <li><a href="#services">Condo &amp; Townhome</a></li>
+            <li><a href="#services">Pre-Listing</a></li>
+            <!-- <li><a href="#services">Sewer Scope</a></li>
+            <li><a href="#services">Radon Testing</a></li>
+            <li><a href="#services">Mold &amp; Air Quality</a></li> -->
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Quick links</p>
+          <ul class="footer-links">
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#coverage">Service area</a></li>
+            <li><a href="#why-us">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SoundCheck Home Inspections. All rights reserved.</p>
+        <div class="footer-lic">
+          WA State License #<span>26006051</span>
+          &nbsp;·&nbsp;
+          <!-- InterNACHI Member #<span>XXXXXXXX</span> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav background on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Scroll-reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
